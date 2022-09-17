@@ -1,0 +1,135 @@
+:root {
+   --Bright-orange: hsl(31, 77%, 52%);
+   --Dark-cyan: hsl(184, 100%, 22%);
+   --Very-dark-cyan: hsl(179, 100%, 13%);
+   --Transparent-white: hsla(0, 0%, 100%, 0.75); /*(paragraphs)*/
+   --Very-light-gray: hsl(0, 0%, 95%); /*(background, headings, buttons)*/
+}
+
+*, *::before, *::after {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+html {
+   font-size: 15px;
+   /*font-family: 'Big Shoulders Display', cursive; 700
+font-family: 'Lexend Deca', sans-serif; 400*/
+}
+
+body {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--Very-light-gray);
+   font-family: 'Lexend Deca', sans-serif;
+}
+
+main {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   width: 59vw;
+}
+
+article {
+   padding: 3vw;
+}
+
+article:nth-of-type(1) {
+   background-color: var(--Bright-orange);
+   border-radius: 0.6rem 0 0 0.6rem;
+}
+
+article:nth-of-type(2) {
+   background-color: var(--Dark-cyan);
+}
+
+article:nth-of-type(3) {
+   background-color: var(--Very-dark-cyan);
+   border-radius: 0 0.6rem 0.6rem 0;
+}
+
+h1 {
+   color: var(--Very-light-gray);
+   font-family: 'Big Shoulders Display', cursive;
+   text-transform: uppercase;
+   font-size: 2.65rem;
+   padding-top: 2vw;
+   padding-bottom: 2vw;
+   opacity: 0.9;
+}
+
+p {
+   color: var(--Transparent-white);
+   line-height: 1.6;
+   padding-bottom: 5vw;
+   opacity: 0.85;
+}
+
+button {
+   background-color: var(--Very-light-gray);
+   font-family: 'Lexend Deca', sans-serif;
+   font-weight: 400;
+   font-size: 1rem;
+   padding: 1vw 2.1vw;
+   border-radius: 2rem;
+   border: solid 0.15rem;
+   border-color: inherit;
+}
+
+article:nth-of-type(1) button {
+   color: var(--Bright-orange);
+}
+
+article:nth-of-type(2) button {
+   color: var(--Dark-cyan);
+}
+
+article:nth-of-type(3) button {
+   color: var(--Very-dark-cyan);
+}
+
+button:hover {
+   cursor: pointer;
+}
+
+article button:active {
+   background-color: inherit;
+   color: var(--Very-light-gray);
+   cursor: pointer;
+   border: solid 0.15rem;
+}
+
+@media screen and (max-width:400px) {
+   main {
+      width: 87%;
+      grid-template-columns: 1fr;
+      margin-top: 9vh;
+      margin-bottom: 9vh;
+   }
+
+   article {
+      padding: 12vw;
+   }
+
+   h1 {
+      padding-top: 7vw;
+      padding-bottom: 7vw;
+   }
+
+   button {
+      padding: 3vw 8vw;
+   }
+
+   article:nth-of-type(1) {
+      border-radius: 0.6rem 0.6rem 0 0;
+   }
+
+   article:nth-of-type(3) {
+      border-radius: 0 0 0.6rem 0.6rem;
+   }
+}
+
